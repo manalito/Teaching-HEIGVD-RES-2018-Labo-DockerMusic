@@ -1,5 +1,5 @@
 FROM node:4.3.1
-MAINTAINER Nathan Fluckiger <nathan.fluckiger@heig-vd.ch>
+MAINTAINER Aurélien Siu <aurelien.siu@heig-vd.ch>
 
 COPY src /opt/app/
 
