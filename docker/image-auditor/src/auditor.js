@@ -23,7 +23,7 @@ var protocol = require('./protocol');
  */
 var dgram = require('dgram');
 
-//var moment = require("moment");
+var moment = require("moment");
 
 /*
  * We use a standard Node.js module to work with TCP
@@ -118,6 +118,11 @@ var serverTCP = net.createServer(function(socketTCP) {
     // We have a connection - a socket object is assigned to the connection automatically
     console.log('CONNECTED: ' + socketTCP.remoteAddress +':'+ socketTCP.remotePort);
 
+		updateMusicians();
+		var msg = JSON.stringify(musicians);
+		
+		socketTCP.write(msg);
+		socketTCP.end();
     // Add a 'data' event handler to this instance of socket
     socketTCP.on('data', function(data) {
 	
